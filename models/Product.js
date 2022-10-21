@@ -1,4 +1,5 @@
 // import important parts of sequelize library
+const { FLOAT } = require('sequelize');
 const { Model, DataTypes, INTEGER } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
@@ -21,7 +22,7 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DECIMAL,
+      type: FLOAT,
       allowNull: false,
       validate: {
         isDecimal: true
